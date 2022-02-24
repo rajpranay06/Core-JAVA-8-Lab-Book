@@ -1,0 +1,22 @@
+package lab9;
+
+import java.util.*;
+
+interface Inf5{
+	public double power(int a, int b);
+}
+
+public class Exercise3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int x = sc.nextInt(), y = sc.nextInt();
+		
+		Inf5 p = (int a, int b) -> { return Math.pow(a, b); };
+		
+		System.out.println(p.power(x, y));
+
+	}
+
+}

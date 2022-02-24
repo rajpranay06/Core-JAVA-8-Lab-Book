@@ -1,0 +1,46 @@
+package day7;
+
+import java.util.Objects;
+
+import javax.print.attribute.standard.MediaSize.Other;
+
+public class Vehicles implements Comparable<Vehicles>{
+	
+	String name;
+	int id, year;
+	
+	public Vehicles(String name, int id, int year){
+		this.name = name;
+		this.id = id;
+		this.year = year;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicles [name=" + name + ", id=" + id + ", year=" + year + "]";
+	}
+
+	public int hashCode(){
+		return Objects.hash(name,id, year);
+	}
+	
+	public boolean equals(Object obj){
+		if(this == obj)
+			return true;
+		if(obj == null)
+			return false;
+		if(getClass() != obj.getClass())
+			return false;
+		Vehicles vehicle = (Vehicles) obj;
+		return id = other.id && Objects.equals(name, other.name);
+		
+	}
+	@Override
+	public int compareTo(Vehicles o) {
+		// TODO Auto-generated method stub
+		
+		return o.name.compareTo(this.name);
+	}
+	
+	
+}

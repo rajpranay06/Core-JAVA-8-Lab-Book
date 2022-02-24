@@ -1,0 +1,29 @@
+package lab9;
+
+import java.time.LocalDate;
+
+public class EmployeeService {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Employee_Lab9 emp1 = new Employee_Lab9();
+		
+		emp1.setEmp_id(101);
+		emp1.setFirstName("Rohit");
+		emp1.setLastName("Sharma");
+		emp1.setEmail("rohitsharma45@gmail.com");
+		emp1.setPhoneNumber("9976543670");
+		emp1.setHireDate(LocalDate.of(2017, 1, 13));
+		emp1.setDesignation("Manager");
+		emp1.setSalary(200000);
+		emp1.setManagerId(501);
+		emp1.department.setDepartmentId(1200);
+		emp1.department.setDepartmentName("Product Development");
+		emp1.department.setManagerId(501);
+		
+		System.out.println(emp1);
+
+	}
+
+}

@@ -1,0 +1,126 @@
+package lab9;
+
+import java.util.*;
+
+interface Inf1{
+	public int square(int a);
+}
+
+interface Inf2{
+	public String concat(String a, String b);
+}
+
+interface Inf3{
+	public ArrayList<Integer> getAbove50(ArrayList<Integer> arr);
+}
+
+interface Even{
+	public ArrayList<Integer> getEvenDigits(ArrayList<Integer> arr);
+}
+
+interface Odd{
+	public int getOddElementsCount(ArrayList<Integer> arr);
+}
+
+interface Sort{
+	public ArrayList<Integer> sortAscending(ArrayList<Integer> arr);
+}
+
+interface Max{
+	public int getMax(ArrayList<Integer> arr);
+}
+
+interface Min{
+	public int getMin(ArrayList<Integer> arr);
+}
+
+public class LambdaDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+
+		Inf1 sq = (int a) -> a * a;
+		Inf2 c = (String a, String b) -> a+b;
+		
+		System.out.println(sq.square(5) + "\n" + c.concat("Hello", "World!"));
+		
+		List<String> cars = Arrays.asList("RollsRoyce", "Mercedes", "Ferarri", "Audi");
+		
+		// Iterating list using lambda foreach
+		cars.forEach(s -> System.out.println(s));
+		
+		//List of numbers
+		ArrayList<Integer> a = new ArrayList<Integer>();
+		//Array size input
+		int n = sc.nextInt();
+		//Array elements
+		for(int i=0;i<n;i++){
+			a.add(sc.nextInt());
+		}
+		//Result Array
+		ArrayList<Integer> ans;
+		
+		// Lambda Expression for finding elements above 50
+		Inf3 above50 = (ArrayList<Integer> arr) -> {
+			ArrayList<Integer> res = new ArrayList<Integer>();
+			for(int i=0;i<arr.size();i++){
+				if(arr.get(i) > 50)
+					res.add(arr.get(i));
+			}
+			return res;
+		};
+		
+		System.out.println("Elements above 50 are:");
+		ans = above50.getAbove50(a);
+		ans.forEach(s -> System.out.println(s));
+		
+		// Lambda Expression for getting even elements
+		Even getEven = (ArrayList<Integer> arr) -> {
+			ArrayList<Integer> res = new ArrayList<Integer>();
+			for(int i=0;i<arr.size();i++){
+				if(arr.get(i)%2 == 0)
+					res.add(arr.get(i));
+			}
+			return res;
+		};
+		
+		System.out.println("Even Elements are:");
+		ans = getEven.getEvenDigits(a);
+		ans.forEach(s -> System.out.println(s));
+		
+		// Lambda Expression for getting count of odd elements
+		Odd getOdd = (ArrayList<Integer> arr) -> {
+			int res = 0;
+			for(int i=0;i<arr.size();i++){
+				if(arr.get(i)%2 != 0)
+					res++;
+			}
+			return res;
+		};
+		
+		System.out.println("Odd Elements count is: " + getOdd.getOddElementsCount(a));
+		
+		// Lambda Expression for sorting the list
+		Sort sort = (ArrayList<Integer> arr) -> {
+			Collections.sort(arr);
+			return arr;
+		};
+		
+		System.out.println("Sorted Array:");
+		ans = sort.sortAscending(a);
+		ans.forEach(s -> System.out.println(s));
+		
+		// Lambda Expression for finding max element
+		Max max = (ArrayList<Integer> arr) -> Collections.max(arr);
+		System.out.println("Maximum element is: " + max.getMax(a));
+		
+		// Lambda Expression for finding min element
+		Min min = (ArrayList<Integer> arr) -> Collections.min(arr);
+		System.out.println("Minimum element is: " + min.getMin(a));
+		
+		
+	}
+
+}

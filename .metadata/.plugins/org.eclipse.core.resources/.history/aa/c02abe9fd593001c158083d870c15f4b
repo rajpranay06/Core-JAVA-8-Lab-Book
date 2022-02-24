@@ -1,0 +1,72 @@
+package lab9;
+
+import java.time.LocalDate;
+
+public class EmployeeService {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Employee_Lab9 emp1 = new Employee_Lab9();
+		
+		emp1.setEmp_id(101);
+		emp1.setFirstName("Rohit");
+		emp1.setLastName("Sharma");
+		emp1.setEmail("rohitsharma45@gmail.com");
+		emp1.setPhoneNumber("9976543670");
+		emp1.setHireDate(LocalDate.of(2017, 5, 25));
+		emp1.setDesignation("Team Lead");
+		emp1.setSalary(200000);
+		emp1.setManagerId(501);
+		emp1.department.setDepartmentId(1200);
+		emp1.department.setDepartmentName("Product Development");
+		emp1.department.setManagerId(501);
+		
+		Employee_Lab9 emp2 = new Employee_Lab9();
+		
+		emp2.setEmp_id(102);
+		emp2.setFirstName("Virat");
+		emp2.setLastName("Kohli");
+		emp2.setEmail("viratkohli18@gmail.com");
+		emp2.setPhoneNumber("9815265101");
+		emp2.setHireDate(LocalDate.of(2019, 11, 5));
+		emp2.setDesignation("Team Lead");
+		emp2.setSalary(100000);
+		emp2.setManagerId(502);
+		emp2.department.setDepartmentId(1300);
+		emp2.department.setDepartmentName("Learning & Development");
+		emp2.department.setManagerId(502);
+		
+		Employee_Lab9 emp3 = new Employee_Lab9();
+		
+		emp3.setEmp_id(103);
+		emp3.setFirstName("Jasprit");
+		emp3.setLastName("Bumrah");
+		emp3.setEmail("jaspritbumrah93@gmail.com");
+		emp3.setPhoneNumber("9815269027");
+		emp3.setHireDate(LocalDate.of(2020, 8, 25));
+		emp3.setDesignation("Developer");
+		emp3.setSalary(120000);
+		emp3.setManagerId(501);
+		emp3.department.setDepartmentId(1200);
+		emp3.department.setDepartmentName("Product Development");
+		emp3.department.setManagerId(501);
+		
+		Employee_Lab9 emp4 = new Employee_Lab9();
+		
+		emp4.setEmp_id(104);
+		emp4.setFirstName("Sachin");
+		emp4.setLastName("Tendulkar");
+		emp4.setEmail("SachinTendulkar@gmail.com");
+		emp4.setPhoneNumber("9815243682");
+		emp4.setHireDate(LocalDate.of(2014, 4, 24));
+		emp4.setDesignation("Department Head");
+		emp4.setSalary(2000000);
+		emp4.department.setDepartmentId(1200);
+		emp4.department.setDepartmentName("Product Development");
+		
+		System.out.println(emp4);
+
+	}
+
+}

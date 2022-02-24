@@ -1,0 +1,29 @@
+package lab8;
+
+import java.io.*;
+import java.util.*;
+
+public class FileProgram {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		File inFile = new File("C:\\Users\\SHPRANAY\\Downloads\\File.txt");
+		File outFile = new File("C:\\Users\\SHPRANAY\\Downloads\\File.txt");
+        FileInputStream fin = new FileInputStream(inFile);
+        FileOutputStream fout = new FileOutputStream(outFile);
+        int c;
+        try{
+        while((c=fin.read()) != -1){
+        	fout.write(c);
+        }
+        }
+        catch(Exception e){
+        	e.printStackTrace();
+        }
+//        CopyDataThread t1 = new CopyDataThread(fin, fout);
+////        CopyDataThread t2 = new CopyDataThread(fin, fout);
+//        t1.start();
+////        t2.start();
+	}
+
+}

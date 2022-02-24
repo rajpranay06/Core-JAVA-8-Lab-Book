@@ -1,0 +1,11 @@
+package lab8;
+
+import java.util.*;
+
+public class Task extends TimerTask{
+
+	public void run() {
+	    System.out.println(new Date());
+		System.exit(0);
+	}
+}
